@@ -46,7 +46,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none !important;
-  z-index: 0 !important; /* Mantiene las linternas estrictamente en el fondo */
+  z-index: 0 !important;
   overflow: hidden;
 }
 .lantern {
@@ -358,15 +358,22 @@ body {
   </div>
 </section>
 
+<!-- SECCIÓN LLUVIA DE SOBRES -->
 <section class="py-20 px-4 bg-gradient-to-t from-tangledDeep via-purple-950 to-tangledDeep relative">
-  <div class="max-w-3xl mx-auto text-center glass-card rounded-3xl p-8 md:p-12 border border-tangledGold/30">
-    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-tangledGold/20 flex items-center justify-center text-tangledGold text-2xl"><i class="fa-solid fa-envelope-open-text"></i></div>
-    <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mb-4">Lluvia de Sobres</h2>
-    <div class="w-16 h-0.5 bg-purple-300 mx-auto mb-6"></div>
-    <p class="font-serif text-purple-200 text-base md:text-lg leading-relaxed italic mb-6">
-      "Tu presencia es el regalo más luminoso y valioso en esta noche tan inolvidable. Si deseas obsequiarme un detalle adicional para iniciar este nuevo capítulo de mis sueños, contaremos con un espacio especial de lluvia de sobres."
+  <div class="max-w-3xl mx-auto text-center glass-card rounded-3xl p-8 md:p-12 border-2 border-tangledGold/50 shadow-[0_0_30px_rgba(250,204,21,0.15)]">
+    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-tangledGold/20 flex items-center justify-center text-tangledGold text-2xl sun-emblem">
+      <i class="fa-solid fa-envelope-open-text"></i>
+    </div>
+    <span class="font-script text-tangledGold text-2xl block mb-1">✨ Lluvia de sobres ✨</span>
+    <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mb-4 tracking-wider">LLUVIA DE SOBRES</h2>
+    <div class="w-20 h-0.5 bg-tangledGold mx-auto mb-6"></div>
+    <p class="font-serif text-purple-100 text-base md:text-lg leading-relaxed italic mb-8 max-w-xl mx-auto">
+      "En este día tan especial, mi mejor regalo será compartir contigo la magia de mis XV años. 🎂💜<br><br>
+      Tu regalo hará parte de mis sueños y de esta nueva etapa que comienza. Por eso, celebraremos esta ocasión con una <strong class="text-tangledGold font-semibold not-italic">lluvia de sobres</strong>, una hermosa forma de regalarme un recuerdo que llevaré con cariño en mi corazón. ✨"
     </p>
-    <div class="inline-block px-6 py-2 rounded-full bg-tangledGold/10 border border-tangledGold/30 text-tangledGold text-sm font-semibold"><i class="fa-solid fa-gift mr-2"></i>Con todo mi cariño, Michell</div>
+    <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border border-tangledGold/40 text-tangledGold text-sm font-semibold shadow-inner">
+      <i class="fa-solid fa-gift"></i> Con todo mi cariño, Michell
+    </div>
   </div>
 </section>
 
@@ -380,238 +387,3 @@ body {
     </div>
 
     <form id="rsvpForm" onsubmit="sendWhatsAppRSVP(event)" class="space-y-6">
-      <div>
-        <label for="guestName" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Nombre y Apellido del Invitado Principal</label>
-        <input type="text" id="guestName" required placeholder="Ej. Camila Rodríguez" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-tangledGold transition">
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <label for="assistantCount" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Número de Asistentes en tu Grupo</label>
-          <select id="assistantCount" onchange="generateAssistantFields()" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tangledGold transition">
-            <option value="1">1 Asistente (Solo yo)</option>
-            <option value="2">2 Asistentes</option>
-            <option value="3">3 Asistentes</option>
-            <option value="4">4 Asistentes</option>
-            <option value="5">5 Asistentes</option>
-            <option value="6">6 Asistentes</option>
-            <option value="7">7 Asistentes</option>
-            <option value="8">8 Asistentes</option>
-            <option value="9">9 Asistentes</option>
-            <option value="10">10 Asistentes</option>
-          </select>
-        </div>
-        <div>
-          <label for="attendanceStatus" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">¿Podrás Asistir?</label>
-          <select id="attendanceStatus" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tangledGold transition">
-            <option value="¡Sí, ahí estaré con toda la ilusión!">¡Sí, ahí estaré con toda la ilusión!</option>
-            <option value="Lamentablemente no podré asistir.">Lamentablemente no podré asistir</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="assistantsContainer" class="space-y-3 pt-2"></div>
-
-      <div>
-        <label for="guestMessage" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Mensaje o Dedicatoria para Michell (Opcional)</label>
-        <textarea id="guestMessage" rows="3" placeholder="Escribe un hermoso deseo..." class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/55 focus:outline-none focus:border-tangledGold transition"></textarea>
-      </div>
-
-      <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-cinzel font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-3 text-base cursor-pointer">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>Enviar Confirmación por WhatsApp
-      </button>
-    </form>
-  </div>
-</section>
-
-<footer class="py-12 px-4 text-center border-t border-tangledGold/20 bg-black/40">
-  <div class="max-w-2xl mx-auto">
-    <div class="w-12 h-12 mx-auto mb-4 text-tangledGold sun-emblem">
-      <svg viewBox="0 0 100 100" fill="currentColor" class="w-full h-full">
-        <circle cx="50" cy="50" r="22"/>
-        <path d="M50 2 L56 28 L50 22 L44 28 Z"/>
-        <path d="M50 98 L56 72 L50 78 L44 72 Z"/>
-        <path d="M2 50 L28 44 L22 50 L28 56 Z"/>
-        <path d="M98 50 L72 44 L78 50 L72 56 Z"/>
-      </svg>
-    </div>
-    <h3 class="font-cinzel text-2xl font-bold text-purple-300 mb-2">Michell Farias Roa</h3>
-    <p class="font-script text-tangledGold text-xl mb-4">"Y por fin veo la luz..."</p>
-    <p class="text-xs text-purple-400/70">XV Años · Diciembre 19, 2026 · Bogotá, Colombia</p>
-  </div>
-</footer>
-
-</div>
-
-<script>
-// LINTERNAS
-const lanternContainer = document.getElementById('lanternContainer');
-for (let i = 0; i < 20; i++) {
-  const lantern = document.createElement('div');
-  lantern.className = 'lantern';
-  lantern.style.left = `${Math.random() * 100}%`;
-  lantern.style.animationDuration = `${12 + Math.random() * 15}s`;
-  lantern.style.animationDelay = `${Math.random() * 10}s`;
-  lanternContainer.appendChild(lantern);
-}
-
-// WAZE: CONSERVA EL ENLACE DIRECTO A LA APLICACIÓN
-function abrirWaze(event) {
-  event.preventDefault();
-
-  const destino = 'Salón de Recepciones Black and White, Restrepo, Bogotá';
-  const appUrl = 'waze://?q=' + encodeURIComponent(destino) + '&navigate=yes';
-  const webUrl = 'https://www.waze.com/ul?q=' + encodeURIComponent(destino) + '&navigate=yes';
-
-  window.location.href = appUrl;
-
-  setTimeout(() => {
-    if (document.visibilityState === 'visible') {
-      window.location.href = webUrl;
-    }
-  }, 1200);
-}
-
-// REPRODUCTOR DE MÚSICA
-const audio = document.getElementById('bgMusic');
-const musicStatus = document.getElementById('musicStatus');
-const musicIcon = document.getElementById('musicIcon');
-
-function updateMusicUI() {
-  const isPlaying = !audio.paused && !audio.ended;
-  if (musicIcon) musicIcon.classList.toggle('fa-spin', isPlaying);
-  if (musicStatus) musicStatus.textContent = isPlaying ? 'Reproduciendo canción' : 'Toca para reproducir';
-}
-
-function openInvitation() {
-  const overlay = document.getElementById('envelope-overlay');
-  const main = document.getElementById('main-content');
-
-  // Forzar la carga y reproducción segura al hacer clic en el botón principal
-  audio.volume = 0.8;
-  audio.load();
-  audio.play().then(() => {
-    updateMusicUI();
-  }).catch((error) => {
-    console.error('No se pudo reproducir el MP3 automáticamente:', error);
-    if (musicStatus) musicStatus.textContent = 'Toca aquí para reproducir';
-  });
-
-  // TRANSICIÓN MÁGICA
-  overlay.style.opacity = '0';
-  overlay.style.transform = 'scale(1.1)';
-  overlay.style.filter = 'blur(10px)';
-
-  setTimeout(() => {
-    overlay.style.display = 'none';
-    main.classList.remove('opacity-0', 'scale-95', 'blur-sm');
-    main.classList.add('opacity-100', 'scale-100', 'blur-none');
-  }, 600);
-}
-
-function toggleMusic() {
-  if (audio.paused) {
-    audio.volume = 0.8;
-    audio.play().then(updateMusicUI).catch((error) => {
-      console.error('Error de reproducción:', error);
-      if (musicStatus) musicStatus.textContent = 'No se pudo cargar la canción';
-    });
-  } else {
-    audio.pause();
-    updateMusicUI();
-  }
-}
-
-audio.addEventListener('play', updateMusicUI);
-audio.addEventListener('pause', updateMusicUI);
-audio.addEventListener('ended', updateMusicUI);
-audio.addEventListener('error', () => {
-  if (musicStatus) musicStatus.textContent = 'No se encontró el archivo MP3';
-  console.error('No se pudo cargar ./te_pedi_carlos_rivera.mp3');
-});
-
-// CUENTA REGRESIVA
-const targetDate = new Date('2026-12-19T19:00:00-05:00').getTime();
-
-function updateCountdown() {
-  const remaining = targetDate - Date.now();
-
-  const days = document.getElementById('days');
-  const hours = document.getElementById('hours');
-  const minutes = document.getElementById('minutes');
-  const seconds = document.getElementById('seconds');
-
-  if (remaining <= 0) {
-    days.textContent = '00';
-    hours.textContent = '00';
-    minutes.textContent = '00';
-    seconds.textContent = '00';
-    return;
-  }
-
-  days.textContent = String(Math.floor(remaining / 86400000)).padStart(2, '0');
-  hours.textContent = String(Math.floor((remaining % 86400000) / 3600000)).padStart(2, '0');
-  minutes.textContent = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, '0');
-  seconds.textContent = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-// CAMPOS DE ACOMPAÑANTES
-function generateAssistantFields() {
-  const count = parseInt(document.getElementById('assistantCount').value, 10);
-  const container = document.getElementById('assistantsContainer');
-  container.innerHTML = '';
-
-  if (count > 1) {
-    const label = document.createElement('label');
-    label.className = 'block font-cinzel text-xs font-semibold text-purple-300 mb-1';
-    label.textContent = `Nombres de los otros ${count - 1} acompañantes:`;
-    container.appendChild(label);
-
-    for (let i = 2; i <= count; i++) {
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.required = true;
-      input.id = `assistant_${i}`;
-      input.placeholder = `Acompañante #${i} (Nombre y Apellido)`;
-      input.className = 'w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-2.5 text-white placeholder-purple-400/50 focus:outline-none focus:border-tangledGold transition text-sm';
-      container.appendChild(input);
-    }
-  }
-}
-
-// CONFIRMACIÓN POR WHATSAPP
-function sendWhatsAppRSVP(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('guestName').value.trim();
-  const count = parseInt(document.getElementById('assistantCount').value, 10);
-  const status = document.getElementById('attendanceStatus').value;
-  const message = document.getElementById('guestMessage').value.trim();
-  const companions = [];
-
-  for (let i = 2; i <= count; i++) {
-    const field = document.getElementById(`assistant_${i}`);
-    if (field && field.value.trim()) companions.push(field.value.trim());
-  }
-
-  const lines = [
-    '✨ CONFIRMACIÓN XV AÑOS DE MICHELL ✨',
-    '',
-    `Invitado principal: ${name}`,
-    `Número de asistentes: ${count}`
-  ];
-
-  if (companions.length) lines.push(`Acompañantes: ${companions.join(', ')}`);
-  lines.push(`Estado: ${status}`);
-  if (message) lines.push(`Mensaje: ${message}`);
-
-  const url = 'https://wa.me/573106327010?text=' + encodeURIComponent(lines.join('\n'));
-  window.open(url, '_blank');
-}
-</script>
-
-</body>
-</html>
-        
