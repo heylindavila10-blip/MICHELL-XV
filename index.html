@@ -46,7 +46,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none !important;
-  z-index: 10;
+  z-index: 0 !important; /* Mantiene las linternas estrictamente en el fondo */
   overflow: hidden;
 }
 .lantern {
@@ -78,7 +78,7 @@ body {
 }
 #envelope-overlay {
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), filter 1.2s ease;
-  z-index: 9999 !important;
+  z-index: 50 !important;
 }
 .wax-seal {
   background: radial-gradient(circle, #fbbf24 0%, #b45309 100%);
@@ -112,7 +112,7 @@ body {
 <div id="envelope-overlay" class="fixed inset-0 flex items-center justify-center bg-tangledDeep px-4 overflow-y-auto">
   <div class="absolute inset-0 bg-gradient-to-b from-purple-950 via-tangledDeep to-black opacity-95 pointer-events-none"></div>
 
-  <div class="relative z-50 max-w-lg w-full bg-gradient-to-b from-[#25133e] to-[#150a24] border-2 border-tangledGold/50 rounded-2xl p-8 shadow-2xl text-center">
+  <div class="relative z-20 max-w-lg w-full bg-gradient-to-b from-[#25133e] to-[#150a24] border-2 border-tangledGold/50 rounded-2xl p-8 shadow-2xl text-center">
     <div class="mx-auto w-24 h-24 mb-4 flex items-center justify-center pointer-events-none">
       <svg class="sun-emblem w-full h-full text-tangledGold" viewBox="0 0 100 100" fill="currentColor">
         <circle cx="50" cy="50" r="22"/>
@@ -135,7 +135,7 @@ body {
       "Por fin he visto la luz, y la niebla ya se fue... Estás cordialmente invitado a ser parte de este cuento de hadas donde los sueños más anhelados cobran vida entre linternas y magia."
     </p>
 
-    <div class="mb-6 bg-purple-900/40 p-3 rounded-xl border border-tangledGold/30 flex items-center justify-between text-left text-xs md:text-sm relative z-50">
+    <div class="mb-6 bg-purple-900/40 p-3 rounded-xl border border-tangledGold/30 flex items-center justify-between text-left text-xs md:text-sm relative z-20">
       <div>
         <p class="font-cinzel font-semibold text-purple-300">Sábado 19 de Diciembre, 2026</p>
         <p class="text-purple-300">Bogotá, Colombia</p>
@@ -147,7 +147,7 @@ body {
       </a>
     </div>
 
-    <button onclick="openInvitation()" class="group relative inline-flex items-center justify-center px-8 py-4 font-cinzel font-bold text-white cursor-pointer z-50">
+    <button onclick="openInvitation()" class="group relative inline-flex items-center justify-center px-8 py-4 font-cinzel font-bold text-white cursor-pointer z-20">
       <span class="absolute inset-0 w-full h-full rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 shadow-[0_0_25px_rgba(250,204,21,0.6)] group-hover:scale-105 transition-transform"></span>
       <span class="relative z-10 flex items-center gap-3 text-purple-950 text-base md:text-lg">
         <span class="w-8 h-8 rounded-full wax-seal flex items-center justify-center text-white shadow-inner">
@@ -179,7 +179,7 @@ body {
 </audio>
 
 <!-- CONTENIDO -->
-<div id="main-content" class="opacity-0 transition-all duration-1000 scale-95 blur-sm">
+<div id="main-content" class="opacity-0 transition-all duration-1000 scale-95 blur-sm relative z-10">
 
 <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-gradient-to-b from-purple-900 via-tangledDeep to-[#0b0514]">
   <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
@@ -614,3 +614,4 @@ function sendWhatsAppRSVP(event) {
 
 </body>
 </html>
+        
