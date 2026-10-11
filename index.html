@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Invitación a los XV años de Michell.">
+<title>XV Años de Michell | Una Nueva Luz</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        tangledPurple: '#2e1a47',
+        tangledDeep: '#180d2b',
+        tangledPink: '#d946ef',
+        tangledGold: '#facc15',
+        tangledGoldDark: '#ca8a04',
+        tangledRose: '#f472b6'
+      },
+      fontFamily: {
+        serif: ['Cinzel', 'Georgia', 'serif'],
+        sans: ['Montserrat', 'sans-serif'],
+        script: ['Great Vibes', 'cursive']
+      }
+    }
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #180d2b;
+  color: #f3e8ff;
+  overflow-x: hidden;
+}
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-script { font-family: 'Great Vibes', cursive; }
+
+.lantern-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none !important;
+  z-index: 10;
+  overflow: hidden;
+}
+.lantern {
+  position: absolute;
+  width: 25px;
+  height: 38px;
+  background: radial-gradient(circle, #fde047 0%, #ca8a04 100%);
+  border-radius: 50% 50% 40% 40%;
+  box-shadow: 0 0 20px 5px #facc15, 0 0 40px 10px rgba(250,204,21,.4);
+  animation: floatUp linear infinite;
+  opacity: .8;
+  pointer-events: none !important;
+}
+.lantern:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 5px;
+  background: #a16207;
+  border-radius: 2px;
+}
+@keyframes floatUp {
+  0% { transform: translateY(110vh) translateX(0) scale(.6) rotate(0); opacity: 0; }
+  20%,80% { opacity: .8; }
+  100% { transform: translateY(-10vh) translateX(50px) scale(1.2) rotate(15deg); opacity: 0; }
+}
+#envelope-overlay {
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), filter 1.2s ease;
+  z-index: 9999 !important;
+}
+.wax-seal {
+  background: radial-gradient(circle, #fbbf24 0%, #b45309 100%);
+  box-shadow: 0 0 15px rgba(251,191,36,.8), inset 0 2px 5px rgba(255,255,255,.4);
+  transition: transform .3s;
+}
+.wax-seal:hover { transform: scale(1.08); }
+.glass-card {
+  background: rgba(40,22,68,.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(250,204,21,.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+}
+@keyframes pulseGlow {
+  0%,100% { filter: drop-shadow(0 0 15px rgba(250,204,21,.6)); }
+  50% { filter: drop-shadow(0 0 35px rgba(250,204,21,.9)); }
+}
+.sun-emblem { animation: pulseGlow 4s infinite ease-in-out; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #180d2b; }
+::-webkit-scrollbar-thumb { background: #b45309; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #facc15; }
+</style>
+</head>
+
+<body class="relative min-h-screen">
+
+<div class="lantern-bg" id="lanternContainer"></div>
+
+<!-- PORTADA -->
+<div id="envelope-overlay" class="fixed inset-0 flex items-center justify-center bg-tangledDeep px-4 overflow-y-auto">
+  <div class="absolute inset-0 bg-gradient-to-b from-purple-950 via-tangledDeep to-black opacity-95 pointer-events-none"></div>
+
+  <div class="relative z-50 max-w-lg w-full bg-gradient-to-b from-[#25133e] to-[#150a24] border-2 border-tangledGold/50 rounded-2xl p-8 shadow-2xl text-center">
+    <div class="mx-auto w-24 h-24 mb-4 flex items-center justify-center pointer-events-none">
+      <svg class="sun-emblem w-full h-full text-tangledGold" viewBox="0 0 100 100" fill="currentColor">
+        <circle cx="50" cy="50" r="22"/>
+        <path d="M50 5 L55 25 L50 20 L45 25 Z"/>
+        <path d="M50 95 L55 75 L50 80 L45 75 Z"/>
+        <path d="M5 50 L25 45 L20 50 L25 55 Z"/>
+        <path d="M95 50 L75 45 L80 50 L75 55 Z"/>
+        <path d="M18 18 L35 30 L32 25 L27 32 Z"/>
+        <path d="M82 82 L65 70 L68 75 L73 68 Z"/>
+        <path d="M82 18 L65 30 L68 25 L73 32 Z"/>
+        <path d="M18 82 L35 70 L32 75 L27 68 Z"/>
+      </svg>
+    </div>
+
+    <p class="font-script text-tangledGold text-2xl mb-1">Un Destino Escrito en las Estrellas</p>
+    <h1 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mb-4 tracking-wider">XV AÑOS DE MICHELL</h1>
+    <div class="w-16 h-0.5 bg-purple-300 mx-auto mb-6"></div>
+
+    <p class="text-sm md:text-base text-purple-200 leading-relaxed mb-6 italic">
+      "Por fin he visto la luz, y la niebla ya se fue... Estás cordialmente invitado a ser parte de este cuento de hadas donde los sueños más anhelados cobran vida entre linternas y magia."
+    </p>
+
+    <div class="mb-6 bg-purple-900/40 p-3 rounded-xl border border-tangledGold/30 flex items-center justify-between text-left text-xs md:text-sm relative z-50">
+      <div>
+        <p class="font-cinzel font-semibold text-purple-300">Sábado 19 de Diciembre, 2026</p>
+        <p class="text-purple-300">Bogotá, Colombia</p>
+      </div>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+A%C3%B1os+de+Michell&dates=20261220T000000Z/20261220T050000Z&details=XV+A%C3%B1os+de+Michell&location=Sal%C3%B3n+de+Recepciones+Black+and+White,+Restrepo,+Bogot%C3%A1"
+         target="_blank" rel="noopener noreferrer"
+         class="bg-tangledGold hover:bg-amber-400 text-purple-950 font-bold px-3 py-2 rounded-lg text-xs transition shadow flex items-center gap-1.5 cursor-pointer">
+        <i class="fa-regular fa-calendar-plus"></i> Agendar
+      </a>
+    </div>
+
+    <button onclick="openInvitation()" class="group relative inline-flex items-center justify-center px-8 py-4 font-cinzel font-bold text-white cursor-pointer z-50">
+      <span class="absolute inset-0 w-full h-full rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 shadow-[0_0_25px_rgba(250,204,21,0.6)] group-hover:scale-105 transition-transform"></span>
+      <span class="relative z-10 flex items-center gap-3 text-purple-950 text-base md:text-lg">
+        <span class="w-8 h-8 rounded-full wax-seal flex items-center justify-center text-white shadow-inner">
+          <i class="fa-solid fa-crown text-xs"></i>
+        </span>
+        Romper Sello y Abrir Invitación
+      </span>
+    </button>
+    <p class="text-xs text-purple-400/70 mt-4">Pulsa para abrir la invitación y escuchar la canción</p>
+  </div>
+</div>
+
+<!-- REPRODUCTOR DE MÚSICA -->
+<div class="fixed bottom-5 right-5 z-40">
+  <button onclick="toggleMusic()" class="glass-card text-tangledGold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 hover:scale-105 transition border-2 border-tangledGold/70 cursor-pointer">
+    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-400/15 border border-tangledGold/50">
+      <i id="musicIcon" class="fa-solid fa-music text-xl"></i>
+    </span>
+    <span class="text-left leading-tight">
+      <span class="block font-cinzel font-bold text-sm">Nuestra canción</span>
+      <span id="musicStatus" class="block text-xs text-purple-200 mt-1">Toca para reproducir</span>
+    </span>
+  </button>
+</div>
+
+<audio id="bgMusic" preload="auto" playsinline>
+  <source src="./te_pedi_carlos_rivera.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+<!-- CONTENIDO -->
+<div id="main-content" class="opacity-0 transition-all duration-1000 scale-95 blur-sm">
+
+<header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-gradient-to-b from-purple-900 via-tangledDeep to-[#0b0514]">
+  <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+    <svg class="w-[600px] h-[600px] text-tangledGold sun-emblem" viewBox="0 0 100 100" fill="currentColor">
+      <circle cx="50" cy="50" r="30"/>
+      <path d="M50 0 L55 35 L50 30 L45 35 Z"/>
+      <path d="M50 100 L55 65 L50 70 L45 65 Z"/>
+      <path d="M0 50 L35 45 L30 50 L35 55 Z"/>
+      <path d="M100 50 L65 45 L70 50 L65 55 Z"/>
+      <path d="M14 14 L40 38 L35 35 L38 40 Z"/>
+      <path d="M86 86 L60 62 L65 65 L62 60 Z"/>
+      <path d="M86 14 L60 38 L65 35 L62 40 Z"/>
+      <path d="M14 86 L40 62 L35 65 L38 60 Z"/>
+    </svg>
+  </div>
+
+  <div class="relative z-10 max-w-3xl mx-auto">
+    <div class="w-20 h-20 mx-auto mb-6 text-tangledGold sun-emblem">
+      <svg viewBox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <circle cx="50" cy="50" r="22"/>
+        <path d="M50 2 L56 28 L50 22 L44 28 Z"/>
+        <path d="M50 98 L56 72 L50 78 L44 72 Z"/>
+        <path d="M2 50 L28 44 L22 50 L28 56 Z"/>
+        <path d="M98 50 L72 44 L78 50 L72 56 Z"/>
+      </svg>
+    </div>
+
+    <p class="font-script text-tangledGold text-3xl md:text-4xl mb-2">Celebremos mis XV Años</p>
+    <h1 class="font-cinzel text-5xl md:text-7xl lg:text-8xl font-black text-purple-300 mb-6 tracking-widest drop-shadow-lg">MICHELL</h1>
+
+    <div class="flex items-center justify-center gap-4 my-6">
+      <div class="h-0.5 w-16 bg-gradient-to-r from-transparent to-tangledGold"></div>
+      <i class="fa-solid fa-star text-tangledGold text-xs"></i>
+      <div class="h-0.5 w-16 bg-gradient-to-l from-transparent to-tangledGold"></div>
+    </div>
+
+    <p class="font-serif text-lg md:text-xl text-purple-200 italic leading-relaxed max-w-2xl mx-auto px-4 mb-10">
+      "Hay un lugar donde los destellos del alma tocan el cielo. Hoy dejo atrás el ayer de mi infancia para abrazar con valentía y alegría el sueño más luminoso de mi juventud."
+    </p>
+
+    <a href="#padres" class="inline-flex flex-col items-center text-tangledGold/80 hover:text-tangledGold transition animate-bounce">
+      <span class="text-xs font-cinzel tracking-widest mb-2">Descubre la Magia</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </div>
+</header>
+
+<section id="padres" class="py-20 px-4 relative z-10 max-w-4xl mx-auto">
+  <div class="glass-card rounded-3xl p-8 md:p-12 border border-tangledGold/30 relative overflow-hidden">
+    <div class="absolute -right-10 -bottom-10 opacity-5 text-tangledGold pointer-events-none">
+      <i class="fa-solid fa-crown text-[250px]"></i>
+    </div>
+    <div class="text-center mb-8">
+      <span class="font-script text-tangledGold text-2xl">Con la bendición de Dios y</span>
+      <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 tracking-wide mt-1">La Compañía de mis Padres</h2>
+      <div class="w-16 h-0.5 bg-purple-300 mx-auto mt-4"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 text-center my-8">
+      <div class="p-6 rounded-2xl bg-purple-950/40 border border-tangledGold/20">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-tangledGold/10 flex items-center justify-center text-tangledGold">
+          <i class="fa-solid fa-heart text-lg"></i>
+        </div>
+        <h3 class="font-cinzel font-bold text-xl text-purple-300 mb-1">Yaneth Roa</h3>
+        <p class="text-xs uppercase tracking-widest text-purple-300 font-semibold">Madre</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-purple-950/40 border border-tangledGold/20">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-tangledGold/10 flex items-center justify-center text-tangledGold">
+          <i class="fa-solid fa-heart text-lg"></i>
+        </div>
+        <h3 class="font-cinzel font-bold text-xl text-purple-300 mb-1">Wilman Farias</h3>
+        <p class="text-xs uppercase tracking-widest text-purple-300 font-semibold">Padre</p>
+      </div>
+    </div>
+
+    <blockquote class="text-purple-200 text-base md:text-lg italic text-center leading-relaxed max-w-2xl mx-auto font-serif">
+      "Verte crecer ha sido el viaje más hermoso de nuestras vidas. Hoy floreces con luz propia, convirtiendo cada uno de nuestros días en una constelación de felicidad infinita. Que la vida siempre te sonría, hija mía."
+    </blockquote>
+  </div>
+</section>
+
+<section class="py-16 px-4 bg-gradient-to-b from-tangledDeep via-purple-950 to-tangledDeep">
+  <div class="max-w-4xl mx-auto text-center">
+    <span class="font-script text-tangledGold text-3xl">La gran noche se acerca</span>
+    <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mb-8">Cuenta Regresiva</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+      <div class="glass-card p-6 rounded-2xl border border-tangledGold/30">
+        <span id="days" class="font-cinzel text-4xl md:text-5xl font-bold text-purple-300 block">00</span>
+        <span class="text-xs uppercase tracking-widest text-purple-300 mt-2 block font-semibold">Días</span>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-tangledGold/30">
+        <span id="hours" class="font-cinzel text-4xl md:text-5xl font-bold text-purple-300 block">00</span>
+        <span class="text-xs uppercase tracking-widest text-purple-300 mt-2 block font-semibold">Horas</span>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-tangledGold/30">
+        <span id="minutes" class="font-cinzel text-4xl md:text-5xl font-bold text-purple-300 block">00</span>
+        <span class="text-xs uppercase tracking-widest text-purple-300 mt-2 block font-semibold">Minutos</span>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-tangledGold/30">
+        <span id="seconds" class="font-cinzel text-4xl md:text-5xl font-bold text-purple-300 block">00</span>
+        <span class="text-xs uppercase tracking-widest text-purple-300 mt-2 block font-semibold">Segundos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 px-4 max-w-6xl mx-auto">
+  <div class="text-center mb-12">
+    <span class="font-script text-tangledGold text-2xl">Cuándo y Dónde</span>
+    <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mt-1">Detalles de la Celebración</h2>
+    <div class="w-16 h-0.5 bg-purple-300 mx-auto mt-4"></div>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-8 items-center">
+    <div class="glass-card rounded-3xl p-6 md:p-8 border border-tangledGold/30">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="font-cinzel font-bold text-xl text-purple-300"><i class="fa-regular fa-calendar-days mr-2"></i>Diciembre 2026</h3>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-tangledGold/20 text-tangledGold border border-tangledGold/30">Mes Especial</span>
+      </div>
+      <div class="grid grid-cols-7 gap-2 text-center text-sm mb-4">
+        <span class="font-bold text-tangledGold">Lu</span><span class="font-bold text-tangledGold">Ma</span><span class="font-bold text-tangledGold">Mi</span><span class="font-bold text-tangledGold">Ju</span><span class="font-bold text-tangledGold">Vi</span><span class="font-bold text-tangledGold">Sá</span><span class="font-bold text-tangledGold">Do</span>
+        <span class="text-purple-500/40">30</span>
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+        <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+        <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+        <span class="bg-gradient-to-r from-amber-500 to-yellow-500 text-purple-950 font-bold rounded-full shadow-[0_0_15px_rgba(250,204,21,0.8)] flex items-center justify-center aspect-square">19</span>
+        <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+        <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span class="text-purple-500/40">1</span><span class="text-purple-500/40">2</span>
+      </div>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+A%C3%B1os+de+Michell&dates=20261220T000000Z/20261220T050000Z&details=XV+A%C3%B1os+de+Michell&location=Sal%C3%B3n+de+Recepciones+Black+and+White,+Restrepo,+Bogot%C3%A1"
+         target="_blank" rel="noopener noreferrer"
+         class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-purple-950 font-bold py-3.5 px-6 rounded-xl transition shadow-lg font-cinzel">
+        <i class="fa-brands fa-google"></i>Agregar al Calendario de Google
+      </a>
+    </div>
+
+    <div class="glass-card rounded-3xl p-6 md:p-8 border border-tangledGold/30 flex flex-col justify-between space-y-6">
+      <div>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h4 class="font-cinzel font-bold text-lg text-purple-300">Salón de Recepciones Black and White</h4>
+            <p class="text-purple-200 text-sm">Barrio Restrepo, Bogotá, Colombia</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl"><i class="fa-regular fa-clock"></i></div>
+          <div>
+            <h4 class="font-cinzel font-bold text-lg text-purple-300">Hora de Llegada</h4>
+            <p class="text-purple-200 text-sm">7:00 PM (Agradecemos puntualidad)</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl"><i class="fa-solid fa-shirt"></i></div>
+          <div>
+            <h4 class="font-cinzel font-bold text-lg text-purple-300">Código de Vestimenta</h4>
+            <p class="text-purple-200 text-sm">Traje Formal / Elegante</p>
+            <p class="text-purple-200 text-sm mt-2 italic">La quinceañera se reserva el color morado, dorado y rosado en todas sus tonalidades.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <a href="waze://?q=Sal%C3%B3n%20de%20Recepciones%20Black%20and%20White%2C%20Restrepo%2C%20Bogot%C3%A1&navigate=yes"
+           onclick="abrirWaze(event)"
+           class="flex items-center justify-center gap-2 bg-[#0099ff] hover:bg-[#0088ee] text-white font-bold py-3 px-4 rounded-xl transition text-sm">
+          <i class="fa-brands fa-waze"></i>Waze
+        </a>
+        <a href="https://maps.google.com/?q=Salón+de+Recepciones+Black+and+White+Barrio+Restrepo+Bogotá"
+           target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 bg-[#ea4335] hover:bg-[#d33426] text-white font-bold py-3 px-4 rounded-xl transition text-sm">
+          <i class="fa-solid fa-map-location-dot"></i>Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 px-4 bg-gradient-to-t from-tangledDeep via-purple-950 to-tangledDeep relative">
+  <div class="max-w-3xl mx-auto text-center glass-card rounded-3xl p-8 md:p-12 border border-tangledGold/30">
+    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-tangledGold/20 flex items-center justify-center text-tangledGold text-2xl"><i class="fa-solid fa-envelope-open-text"></i></div>
+    <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mb-4">Lluvia de Sobres</h2>
+    <div class="w-16 h-0.5 bg-purple-300 mx-auto mb-6"></div>
+    <p class="font-serif text-purple-200 text-base md:text-lg leading-relaxed italic mb-6">
+      "Tu presencia es el regalo más luminoso y valioso en esta noche tan inolvidable. Si deseas obsequiarme un detalle adicional para iniciar este nuevo capítulo de mis sueños, contaremos con un espacio especial de lluvia de sobres."
+    </p>
+    <div class="inline-block px-6 py-2 rounded-full bg-tangledGold/10 border border-tangledGold/30 text-tangledGold text-sm font-semibold"><i class="fa-solid fa-gift mr-2"></i>Con todo mi cariño, Michell</div>
+  </div>
+</section>
+
+<section id="rsvp" class="py-20 px-4 max-w-3xl mx-auto">
+  <div class="glass-card rounded-3xl p-8 md:p-12 border border-tangledGold/30 shadow-2xl">
+    <div class="text-center mb-8">
+      <span class="font-script text-tangledGold text-2xl">Confirma tu asistencia</span>
+      <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mt-1">¿Nos acompañarás en este sueño?</h2>
+      <div class="w-16 h-0.5 bg-purple-300 mx-auto mt-4"></div>
+      <p class="text-purple-300 text-sm mt-3">Por favor confirma antes del 15 de noviembre de 2026.</p>
+    </div>
+
+    <form id="rsvpForm" onsubmit="sendWhatsAppRSVP(event)" class="space-y-6">
+      <div>
+        <label for="guestName" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Nombre y Apellido del Invitado Principal</label>
+        <input type="text" id="guestName" required placeholder="Ej. Camila Rodríguez" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-tangledGold transition">
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="assistantCount" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Número de Asistentes en tu Grupo</label>
+          <select id="assistantCount" onchange="generateAssistantFields()" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tangledGold transition">
+            <option value="1">1 Asistente (Solo yo)</option>
+            <option value="2">2 Asistentes</option>
+            <option value="3">3 Asistentes</option>
+            <option value="4">4 Asistentes</option>
+            <option value="5">5 Asistentes</option>
+            <option value="6">6 Asistentes</option>
+            <option value="7">7 Asistentes</option>
+            <option value="8">8 Asistentes</option>
+            <option value="9">9 Asistentes</option>
+            <option value="10">10 Asistentes</option>
+          </select>
+        </div>
+        <div>
+          <label for="attendanceStatus" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">¿Podrás Asistir?</label>
+          <select id="attendanceStatus" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tangledGold transition">
+            <option value="¡Sí, ahí estaré con toda la ilusión!">¡Sí, ahí estaré con toda la ilusión!</option>
+            <option value="Lamentablemente no podré asistir.">Lamentablemente no podré asistir</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="assistantsContainer" class="space-y-3 pt-2"></div>
+
+      <div>
+        <label for="guestMessage" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Mensaje o Dedicatoria para Michell (Opcional)</label>
+        <textarea id="guestMessage" rows="3" placeholder="Escribe un hermoso deseo..." class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/55 focus:outline-none focus:border-tangledGold transition"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-cinzel font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-3 text-base cursor-pointer">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>Enviar Confirmación por WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer class="py-12 px-4 text-center border-t border-tangledGold/20 bg-black/40">
+  <div class="max-w-2xl mx-auto">
+    <div class="w-12 h-12 mx-auto mb-4 text-tangledGold sun-emblem">
+      <svg viewBox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <circle cx="50" cy="50" r="22"/>
+        <path d="M50 2 L56 28 L50 22 L44 28 Z"/>
+        <path d="M50 98 L56 72 L50 78 L44 72 Z"/>
+        <path d="M2 50 L28 44 L22 50 L28 56 Z"/>
+        <path d="M98 50 L72 44 L78 50 L72 56 Z"/>
+      </svg>
+    </div>
+    <h3 class="font-cinzel text-2xl font-bold text-purple-300 mb-2">Michell Farias Roa</h3>
+    <p class="font-script text-tangledGold text-xl mb-4">"Y por fin veo la luz..."</p>
+    <p class="text-xs text-purple-400/70">XV Años · Diciembre 19, 2026 · Bogotá, Colombia</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+// LINTERNAS
+const lanternContainer = document.getElementById('lanternContainer');
+for (let i = 0; i < 20; i++) {
+  const lantern = document.createElement('div');
+  lantern.className = 'lantern';
+  lantern.style.left = `${Math.random() * 100}%`;
+  lantern.style.animationDuration = `${12 + Math.random() * 15}s`;
+  lantern.style.animationDelay = `${Math.random() * 10}s`;
+  lanternContainer.appendChild(lantern);
+}
+
+// WAZE: CONSERVA EL ENLACE DIRECTO A LA APLICACIÓN
+function abrirWaze(event) {
+  event.preventDefault();
+
+  const destino = 'Salón de Recepciones Black and White, Restrepo, Bogotá';
+  const appUrl = 'waze://?q=' + encodeURIComponent(destino) + '&navigate=yes';
+  const webUrl = 'https://www.waze.com/ul?q=' + encodeURIComponent(destino) + '&navigate=yes';
+
+  window.location.href = appUrl;
+
+  setTimeout(() => {
+    if (document.visibilityState === 'visible') {
+      window.location.href = webUrl;
+    }
+  }, 1200);
+}
+
+// REPRODUCTOR DE MÚSICA
+const audio = document.getElementById('bgMusic');
+const musicStatus = document.getElementById('musicStatus');
+const musicIcon = document.getElementById('musicIcon');
+
+function updateMusicUI() {
+  const isPlaying = !audio.paused && !audio.ended;
+  if (musicIcon) musicIcon.classList.toggle('fa-spin', isPlaying);
+  if (musicStatus) musicStatus.textContent = isPlaying ? 'Reproduciendo canción' : 'Toca para reproducir';
+}
+
+function openInvitation() {
+  const overlay = document.getElementById('envelope-overlay');
+  const main = document.getElementById('main-content');
+
+  // Forzar la carga y reproducción segura al hacer clic en el botón principal
+  audio.volume = 0.8;
+  audio.load();
+  audio.play().then(() => {
+    updateMusicUI();
+  }).catch((error) => {
+    console.error('No se pudo reproducir el MP3 automáticamente:', error);
+    if (musicStatus) musicStatus.textContent = 'Toca aquí para reproducir';
+  });
+
+  // TRANSICIÓN MÁGICA
+  overlay.style.opacity = '0';
+  overlay.style.transform = 'scale(1.1)';
+  overlay.style.filter = 'blur(10px)';
+
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    main.classList.remove('opacity-0', 'scale-95', 'blur-sm');
+    main.classList.add('opacity-100', 'scale-100', 'blur-none');
+  }, 600);
+}
+
+function toggleMusic() {
+  if (audio.paused) {
+    audio.volume = 0.8;
+    audio.play().then(updateMusicUI).catch((error) => {
+      console.error('Error de reproducción:', error);
+      if (musicStatus) musicStatus.textContent = 'No se pudo cargar la canción';
+    });
+  } else {
+    audio.pause();
+    updateMusicUI();
+  }
+}
+
+audio.addEventListener('play', updateMusicUI);
+audio.addEventListener('pause', updateMusicUI);
+audio.addEventListener('ended', updateMusicUI);
+audio.addEventListener('error', () => {
+  if (musicStatus) musicStatus.textContent = 'No se encontró el archivo MP3';
+  console.error('No se pudo cargar ./te_pedi_carlos_rivera.mp3');
+});
+
+// CUENTA REGRESIVA
+const targetDate = new Date('2026-12-19T19:00:00-05:00').getTime();
+
+function updateCountdown() {
+  const remaining = targetDate - Date.now();
+
+  const days = document.getElementById('days');
+  const hours = document.getElementById('hours');
+  const minutes = document.getElementById('minutes');
+  const seconds = document.getElementById('seconds');
+
+  if (remaining <= 0) {
+    days.textContent = '00';
+    hours.textContent = '00';
+    minutes.textContent = '00';
+    seconds.textContent = '00';
+    return;
+  }
+
+  days.textContent = String(Math.floor(remaining / 86400000)).padStart(2, '0');
+  hours.textContent = String(Math.floor((remaining % 86400000) / 3600000)).padStart(2, '0');
+  minutes.textContent = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, '0');
+  seconds.textContent = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// CAMPOS DE ACOMPAÑANTES
+function generateAssistantFields() {
+  const count = parseInt(document.getElementById('assistantCount').value, 10);
+  const container = document.getElementById('assistantsContainer');
+  container.innerHTML = '';
+
+  if (count > 1) {
+    const label = document.createElement('label');
+    label.className = 'block font-cinzel text-xs font-semibold text-purple-300 mb-1';
+    label.textContent = `Nombres de los otros ${count - 1} acompañantes:`;
+    container.appendChild(label);
+
+    for (let i = 2; i <= count; i++) {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.required = true;
+      input.id = `assistant_${i}`;
+      input.placeholder = `Acompañante #${i} (Nombre y Apellido)`;
+      input.className = 'w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-2.5 text-white placeholder-purple-400/50 focus:outline-none focus:border-tangledGold transition text-sm';
+      container.appendChild(input);
+    }
+  }
+}
+
+// CONFIRMACIÓN POR WHATSAPP
+function sendWhatsAppRSVP(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('guestName').value.trim();
+  const count = parseInt(document.getElementById('assistantCount').value, 10);
+  const status = document.getElementById('attendanceStatus').value;
+  const message = document.getElementById('guestMessage').value.trim();
+  const companions = [];
+
+  for (let i = 2; i <= count; i++) {
+    const field = document.getElementById(`assistant_${i}`);
+    if (field && field.value.trim()) companions.push(field.value.trim());
+  }
+
+  const lines = [
+    '✨ CONFIRMACIÓN XV AÑOS DE MICHELL ✨',
+    '',
+    `Invitado principal: ${name}`,
+    `Número de asistentes: ${count}`
+  ];
+
+  if (companions.length) lines.push(`Acompañantes: ${companions.join(', ')}`);
+  lines.push(`Estado: ${status}`);
+  if (message) lines.push(`Mensaje: ${message}`);
+
+  const url = 'https://wa.me/573106327010?text=' + encodeURIComponent(lines.join('\n'));
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
