@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Invitación a los XV años de Michell Farias Roa. Sábado 19 de diciembre de 2026, Bogotá.">
+<meta name="description" content="Invitación a los XV años de Michell.">
 <title>XV Años de Michell | Una Nueva Luz</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -30,7 +29,7 @@ tailwind.config = {
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -46,8 +45,8 @@ body {
 .lantern-bg {
   position: fixed;
   inset: 0;
-  pointer-events: none;
-  z-index: 1;
+  pointer-events: none !important;
+  z-index: 10;
   overflow: hidden;
 }
 .lantern {
@@ -59,6 +58,7 @@ body {
   box-shadow: 0 0 20px 5px #facc15, 0 0 40px 10px rgba(250,204,21,.4);
   animation: floatUp linear infinite;
   opacity: .8;
+  pointer-events: none !important;
 }
 .lantern:after {
   content: '';
@@ -78,6 +78,7 @@ body {
 }
 #envelope-overlay {
   transition: opacity 1s ease, transform 1s ease;
+  z-index: 9999 !important;
 }
 .wax-seal {
   background: radial-gradient(circle, #fbbf24 0%, #b45309 100%);
@@ -85,7 +86,6 @@ body {
   transition: transform .3s;
 }
 .wax-seal:hover { transform: scale(1.08); }
-
 .glass-card {
   background: rgba(40,22,68,.75);
   backdrop-filter: blur(12px);
@@ -108,12 +108,12 @@ body {
 
 <div class="lantern-bg" id="lanternContainer"></div>
 
-<!-- PORTADA DE APERTURA -->
-<div id="envelope-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-tangledDeep px-4 overflow-y-auto">
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-950 via-tangledDeep to-black opacity-95"></div>
+<!-- PORTADA -->
+<div id="envelope-overlay" class="fixed inset-0 flex items-center justify-center bg-tangledDeep px-4 overflow-y-auto">
+  <div class="absolute inset-0 bg-gradient-to-b from-purple-950 via-tangledDeep to-black opacity-95 pointer-events-none"></div>
 
-  <div class="relative z-10 max-w-lg w-full bg-gradient-to-b from-[#25133e] to-[#150a24] border-2 border-tangledGold/50 rounded-2xl p-8 shadow-2xl text-center">
-    <div class="mx-auto w-24 h-24 mb-4 flex items-center justify-center">
+  <div class="relative z-50 max-w-lg w-full bg-gradient-to-b from-[#25133e] to-[#150a24] border-2 border-tangledGold/50 rounded-2xl p-8 shadow-2xl text-center">
+    <div class="mx-auto w-24 h-24 mb-4 flex items-center justify-center pointer-events-none">
       <svg class="sun-emblem w-full h-full text-tangledGold" viewBox="0 0 100 100" fill="currentColor">
         <circle cx="50" cy="50" r="22"/>
         <path d="M50 5 L55 25 L50 20 L45 25 Z"/>
@@ -135,19 +135,19 @@ body {
       "Por fin he visto la luz, y la niebla ya se fue... Has sido invitada a ser parte de este cuento de hadas donde los sueños más anhelados cobran vida entre linternas y magia."
     </p>
 
-    <div class="mb-6 bg-purple-900/40 p-3 rounded-xl border border-tangledGold/30 flex items-center justify-between text-left text-xs md:text-sm">
+    <div class="mb-6 bg-purple-900/40 p-3 rounded-xl border border-tangledGold/30 flex items-center justify-between text-left text-xs md:text-sm relative z-50">
       <div>
         <p class="font-cinzel font-semibold text-purple-300">Sábado 19 de Diciembre, 2026</p>
         <p class="text-purple-300">Bogotá, Colombia</p>
       </div>
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+A%C3%B1os+de+Michell+-+Tangled+Edition&dates=20261220T000000Z/20261220T050000Z&details=Invitaci%C3%B3n+oficial+a+los+XV+A%C3%B1os+de+Michell.+Sal%C3%B3n+Black+and+White.+%C2%A1Te+esperamos!&location=Sal%C3%B3n+de+Recepciones+Black+and+White,+Barrio+Restrepo,+Bogot%C3%A1"
-         target="_blank"
-         class="bg-tangledGold hover:bg-amber-400 text-purple-950 font-bold px-3 py-2 rounded-lg text-xs transition shadow flex items-center gap-1.5">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+A%C3%B1os+de+Michell&dates=20261220T000000Z/20261220T050000Z&details=XV+A%C3%B1os+de+Michell&location=Sal%C3%B3n+de+Recepciones+Black+and+White,+Restrepo,+Bogot%C3%A1"
+         target="_blank" rel="noopener noreferrer"
+         class="bg-tangledGold hover:bg-amber-400 text-purple-950 font-bold px-3 py-2 rounded-lg text-xs transition shadow flex items-center gap-1.5 cursor-pointer">
         <i class="fa-regular fa-calendar-plus"></i> Agendar
       </a>
     </div>
 
-    <button onclick="openInvitation()" class="group relative inline-flex items-center justify-center px-8 py-4 font-cinzel font-bold text-white">
+    <button onclick="openInvitation()" class="group relative inline-flex items-center justify-center px-8 py-4 font-cinzel font-bold text-white cursor-pointer z-50">
       <span class="absolute inset-0 w-full h-full rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 shadow-[0_0_25px_rgba(250,204,21,0.6)] group-hover:scale-105 transition-transform"></span>
       <span class="relative z-10 flex items-center gap-3 text-purple-950 text-base md:text-lg">
         <span class="w-8 h-8 rounded-full wax-seal flex items-center justify-center text-white shadow-inner">
@@ -156,33 +156,32 @@ body {
         Romper Sello y Abrir Invitación
       </span>
     </button>
-
-    <p class="text-xs text-purple-400/70 mt-4">Sube el volumen y prepárate para soñar despierta</p>
+    <p class="text-xs text-purple-400/70 mt-4">Pulsa para abrir la invitación y escuchar la canción</p>
   </div>
 </div>
 
-<!-- BOTÓN Y AUDIO -->
+<!-- REPRODUCTOR DE MÚSICA -->
 <div class="fixed bottom-5 right-5 z-40">
-  <button onclick="toggleMusic()" class="glass-card text-tangledGold px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 hover:scale-105 transition border-2 border-tangledGold/70 min-w-[210px] justify-center">
-    <span class="flex items-center justify-center w-14 h-14 rounded-full bg-amber-400/15 border border-tangledGold/50">
-      <i id="musicIcon" class="fa-solid fa-music text-3xl animate-pulse"></i>
+  <button onclick="toggleMusic()" class="glass-card text-tangledGold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 hover:scale-105 transition border-2 border-tangledGold/70 cursor-pointer">
+    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-400/15 border border-tangledGold/50">
+      <i id="musicIcon" class="fa-solid fa-music text-xl"></i>
     </span>
     <span class="text-left leading-tight">
-      <span class="block font-cinzel font-bold text-base">Nuestra canción</span>
-      <span id="musicStatus" class="block text-sm text-purple-200 mt-1">Reproducir música</span>
+      <span class="block font-cinzel font-bold text-sm">Nuestra canción</span>
+      <span id="musicStatus" class="block text-xs text-purple-200 mt-1">Toca para reproducir</span>
     </span>
   </button>
-
-  <audio id="bgMusic" preload="auto">
-    <source src="te_pedi_carlos_rivera(1).mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
-  </audio>
 </div>
 
-<!-- CONTENIDO PRINCIPAL -->
+<audio id="bgMusic" preload="auto" playsinline>
+  <source src="./te_pedi_carlos_rivera.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+<!-- CONTENIDO -->
 <div id="main-content" class="opacity-0 transition-opacity duration-1000">
 
-<header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900 via-tangledDeep to-[#0b0514]">
+<header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-gradient-to-b from-purple-900 via-tangledDeep to-[#0b0514]">
   <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
     <svg class="w-[600px] h-[600px] text-tangledGold sun-emblem" viewBox="0 0 100 100" fill="currentColor">
       <circle cx="50" cy="50" r="30"/>
@@ -208,12 +207,12 @@ body {
       </svg>
     </div>
 
-    <p class="font-script text-tangledGold text-3xl md:text-4xl mb-2">Celebremos mi XV Años</p>
+    <p class="font-script text-tangledGold text-3xl md:text-4xl mb-2">Celebremos mis XV Años</p>
     <h1 class="font-cinzel text-5xl md:text-7xl lg:text-8xl font-black text-purple-300 mb-6 tracking-widest drop-shadow-lg">MICHELL</h1>
 
     <div class="flex items-center justify-center gap-4 my-6">
       <div class="h-0.5 w-16 bg-gradient-to-r from-transparent to-tangledGold"></div>
-      <i class="fa-solid fa-star text-tangledGold text-xs animate-spin" style="animation-duration: 10s;"></i>
+      <i class="fa-solid fa-star text-tangledGold text-xs"></i>
       <div class="h-0.5 w-16 bg-gradient-to-l from-transparent to-tangledGold"></div>
     </div>
 
@@ -233,7 +232,6 @@ body {
     <div class="absolute -right-10 -bottom-10 opacity-5 text-tangledGold pointer-events-none">
       <i class="fa-solid fa-crown text-[250px]"></i>
     </div>
-
     <div class="text-center mb-8">
       <span class="font-script text-tangledGold text-2xl">Con la bendición de Dios y</span>
       <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 tracking-wide mt-1">Nuestros Amados Padres</h2>
@@ -248,7 +246,6 @@ body {
         <h3 class="font-cinzel font-bold text-xl text-purple-300 mb-1">Yaneth Roa</h3>
         <p class="text-xs uppercase tracking-widest text-purple-300 font-semibold">Madre</p>
       </div>
-
       <div class="p-6 rounded-2xl bg-purple-950/40 border border-tangledGold/20">
         <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-tangledGold/10 flex items-center justify-center text-tangledGold">
           <i class="fa-solid fa-heart text-lg"></i>
@@ -268,8 +265,7 @@ body {
   <div class="max-w-4xl mx-auto text-center">
     <span class="font-script text-tangledGold text-3xl">La gran noche se acerca</span>
     <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mb-8">Cuenta Regresiva</h2>
-
-    <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
       <div class="glass-card p-6 rounded-2xl border border-tangledGold/30">
         <span id="days" class="font-cinzel text-4xl md:text-5xl font-bold text-purple-300 block">00</span>
         <span class="text-xs uppercase tracking-widest text-purple-300 mt-2 block font-semibold">Días</span>
@@ -300,66 +296,44 @@ body {
   <div class="grid lg:grid-cols-2 gap-8 items-center">
     <div class="glass-card rounded-3xl p-6 md:p-8 border border-tangledGold/30">
       <div class="flex justify-between items-center mb-6">
-        <h3 class="font-cinzel font-bold text-xl text-purple-300">
-          <i class="fa-regular fa-calendar-days mr-2"></i>Diciembre 2026
-        </h3>
+        <h3 class="font-cinzel font-bold text-xl text-purple-300"><i class="fa-regular fa-calendar-days mr-2"></i>Diciembre 2026</h3>
         <span class="text-xs font-semibold px-3 py-1 rounded-full bg-tangledGold/20 text-tangledGold border border-tangledGold/30">Mes Especial</span>
       </div>
-
       <div class="grid grid-cols-7 gap-2 text-center text-sm mb-4">
-        <span class="font-bold text-tangledGold">Lu</span>
-        <span class="font-bold text-tangledGold">Ma</span>
-        <span class="font-bold text-tangledGold">Mi</span>
-        <span class="font-bold text-tangledGold">Ju</span>
-        <span class="font-bold text-tangledGold">Vi</span>
-        <span class="font-bold text-tangledGold">Sá</span>
-        <span class="font-bold text-tangledGold">Do</span>
-
+        <span class="font-bold text-tangledGold">Lu</span><span class="font-bold text-tangledGold">Ma</span><span class="font-bold text-tangledGold">Mi</span><span class="font-bold text-tangledGold">Ju</span><span class="font-bold text-tangledGold">Vi</span><span class="font-bold text-tangledGold">Sá</span><span class="font-bold text-tangledGold">Do</span>
         <span class="text-purple-500/40">30</span>
         <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
         <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
         <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
         <span class="bg-gradient-to-r from-amber-500 to-yellow-500 text-purple-950 font-bold rounded-full shadow-[0_0_15px_rgba(250,204,21,0.8)] flex items-center justify-center aspect-square">19</span>
         <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
-        <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
-        <span class="text-purple-500/40">1</span><span class="text-purple-500/40">2</span><span class="text-purple-500/40">3</span>
+        <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span class="text-purple-500/40">1</span><span class="text-purple-500/40">2</span>
       </div>
-
-      <div class="text-center mt-6">
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+A%C3%B1os+de+Michell+-+Tangled+Edition&dates=20261220T000000Z/20261220T050000Z&details=Invitaci%C3%B3n+oficial+a+los+XV+A%C3%B1os+de+Michell.+Sal%C3%B3n+Black+and+White.+%C2%A1Te+esperamos!&location=Sal%C3%B3n+de+Recepciones+Black+and+White,+Barrio+Restrepo,+Bogot%C3%A1"
-           target="_blank"
-           class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-purple-950 font-bold py-3.5 px-6 rounded-xl transition shadow-lg font-cinzel">
-          <i class="fa-brands fa-google"></i>Agregar al Calendario de Google
-        </a>
-      </div>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+A%C3%B1os+de+Michell&dates=20261220T000000Z/20261220T050000Z&details=XV+A%C3%B1os+de+Michell&location=Sal%C3%B3n+de+Recepciones+Black+and+White,+Restrepo,+Bogot%C3%A1"
+         target="_blank" rel="noopener noreferrer"
+         class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-purple-950 font-bold py-3.5 px-6 rounded-xl transition shadow-lg font-cinzel">
+        <i class="fa-brands fa-google"></i>Agregar al Calendario de Google
+      </a>
     </div>
 
     <div class="glass-card rounded-3xl p-6 md:p-8 border border-tangledGold/30 flex flex-col justify-between space-y-6">
       <div>
         <div class="flex items-center gap-4 mb-4">
-          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
+          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl"><i class="fa-solid fa-location-dot"></i></div>
           <div>
             <h4 class="font-cinzel font-bold text-lg text-purple-300">Salón de Recepciones Black and White</h4>
             <p class="text-purple-200 text-sm">Barrio Restrepo, Bogotá, Colombia</p>
           </div>
         </div>
-
         <div class="flex items-center gap-4 mb-4">
-          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl">
-            <i class="fa-regular fa-clock"></i>
-          </div>
+          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl"><i class="fa-regular fa-clock"></i></div>
           <div>
             <h4 class="font-cinzel font-bold text-lg text-purple-300">Hora de Llegada</h4>
             <p class="text-purple-200 text-sm">7:00 PM (Agradecemos puntualidad)</p>
           </div>
         </div>
-
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl">
-            <i class="fa-solid fa-shirt"></i>
-          </div>
+          <div class="w-12 h-12 rounded-2xl bg-tangledGold/20 flex items-center justify-center text-tangledGold text-xl"><i class="fa-solid fa-shirt"></i></div>
           <div>
             <h4 class="font-cinzel font-bold text-lg text-purple-300">Código de Vestimenta</h4>
             <p class="text-purple-200 text-sm">Traje Formal / Elegante</p>
@@ -374,9 +348,8 @@ body {
            class="flex items-center justify-center gap-2 bg-[#0099ff] hover:bg-[#0088ee] text-white font-bold py-3 px-4 rounded-xl transition text-sm">
           <i class="fa-brands fa-waze"></i>Waze
         </a>
-
         <a href="https://maps.google.com/?q=Salón+de+Recepciones+Black+and+White+Barrio+Restrepo+Bogotá"
-           target="_blank"
+           target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-center gap-2 bg-[#ea4335] hover:bg-[#d33426] text-white font-bold py-3 px-4 rounded-xl transition text-sm">
           <i class="fa-solid fa-map-location-dot"></i>Google Maps
         </a>
@@ -387,21 +360,16 @@ body {
 
 <section class="py-20 px-4 bg-gradient-to-t from-tangledDeep via-purple-950 to-tangledDeep relative">
   <div class="max-w-3xl mx-auto text-center glass-card rounded-3xl p-8 md:p-12 border border-tangledGold/30">
-    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-tangledGold/20 flex items-center justify-center text-tangledGold text-2xl">
-      <i class="fa-solid fa-envelope-open-text"></i>
-    </div>
+    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-tangledGold/20 flex items-center justify-center text-tangledGold text-2xl"><i class="fa-solid fa-envelope-open-text"></i></div>
     <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-purple-300 mb-4">Lluvia de Sobres</h2>
     <div class="w-16 h-0.5 bg-purple-300 mx-auto mb-6"></div>
     <p class="font-serif text-purple-200 text-base md:text-lg leading-relaxed italic mb-6">
       "Tu presencia es el regalo más luminoso y valioso en esta noche tan inolvidable. Si deseas obsequiarme un detalle adicional para iniciar este nuevo capítulo de mis sueños, contaremos con un espacio especial de lluvia de sobres."
     </p>
-    <div class="inline-block px-6 py-2 rounded-full bg-tangledGold/10 border border-tangledGold/30 text-tangledGold text-sm font-semibold">
-      <i class="fa-solid fa-gift mr-2"></i>Con todo mi cariño, Michell
-    </div>
+    <div class="inline-block px-6 py-2 rounded-full bg-tangledGold/10 border border-tangledGold/30 text-tangledGold text-sm font-semibold"><i class="fa-solid fa-gift mr-2"></i>Con todo mi cariño, Michell</div>
   </div>
 </section>
 
-<!-- CONFIRMACIÓN DE ASISTENCIA -->
 <section id="rsvp" class="py-20 px-4 max-w-3xl mx-auto">
   <div class="glass-card rounded-3xl p-8 md:p-12 border border-tangledGold/30 shadow-2xl">
     <div class="text-center mb-8">
@@ -413,13 +381,13 @@ body {
 
     <form id="rsvpForm" onsubmit="sendWhatsAppRSVP(event)" class="space-y-6">
       <div>
-        <label class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Nombre y Apellido del Invitado Principal</label>
+        <label for="guestName" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Nombre y Apellido del Invitado Principal</label>
         <input type="text" id="guestName" required placeholder="Ej. Camila Rodríguez" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-tangledGold transition">
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <div>
-          <label class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Número de Asistentes en tu Grupo</label>
+          <label for="assistantCount" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Número de Asistentes en tu Grupo</label>
           <select id="assistantCount" onchange="generateAssistantFields()" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tangledGold transition">
             <option value="1">1 Asistente (Solo yo)</option>
             <option value="2">2 Asistentes</option>
@@ -430,15 +398,14 @@ body {
             <option value="7">7 Asistentes</option>
             <option value="8">8 Asistentes</option>
             <option value="9">9 Asistentes</option>
-            <option value="10">10 Asistentes (Grupo completo)</option>
+            <option value="10">10 Asistentes</option>
           </select>
         </div>
-
         <div>
-          <label class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">¿Podrás Asistir?</label>
+          <label for="attendanceStatus" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">¿Podrás Asistir?</label>
           <select id="attendanceStatus" class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tangledGold transition">
             <option value="¡Sí, ahí estaré con toda la ilusión!">¡Sí, ahí estaré con toda la ilusión!</option>
-            <option value="Lamentablemente no podré asistir, les acompaño en el corazón.">Lamentablemente no podré asistir</option>
+            <option value="Lamentablemente no podré asistir.">Lamentablemente no podré asistir</option>
           </select>
         </div>
       </div>
@@ -446,11 +413,11 @@ body {
       <div id="assistantsContainer" class="space-y-3 pt-2"></div>
 
       <div>
-        <label class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Mensaje o Dedicatoria para Michell (Opcional)</label>
+        <label for="guestMessage" class="block font-cinzel text-sm font-semibold text-purple-300 mb-2">Mensaje o Dedicatoria para Michell (Opcional)</label>
         <textarea id="guestMessage" rows="3" placeholder="Escribe un hermoso deseo..." class="w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/55 focus:outline-none focus:border-tangledGold transition"></textarea>
       </div>
 
-      <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-cinzel font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-3 text-base">
+      <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-cinzel font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-3 text-base cursor-pointer">
         <i class="fa-brands fa-whatsapp text-2xl"></i>Enviar Confirmación por WhatsApp
       </button>
     </form>
@@ -477,71 +444,57 @@ body {
 </div>
 
 <script>
-// LINTERNAS ANIMADAS
+// LINTERNAS
 const lanternContainer = document.getElementById('lanternContainer');
-
 for (let i = 0; i < 20; i++) {
-  const l = document.createElement('div');
-  l.classList.add('lantern');
-  l.style.left = `${Math.random() * 100}%`;
-  l.style.top = `${Math.random() * 100}%`;
-  l.style.animationDuration = `${12 + Math.random() * 15}s`;
-  l.style.animationDelay = `${Math.random() * 10}s`;
-  l.style.transform = `scale(${.5 + Math.random() * .8})`;
-  lanternContainer.appendChild(l);
+  const lantern = document.createElement('div');
+  lantern.className = 'lantern';
+  lantern.style.left = `${Math.random() * 100}%`;
+  lantern.style.animationDuration = `${12 + Math.random() * 15}s`;
+  lantern.style.animationDelay = `${Math.random() * 10}s`;
+  lanternContainer.appendChild(lantern);
 }
 
-// WAZE: INTENTA ABRIR DIRECTAMENTE LA APLICACIÓN
+// WAZE: CONSERVA EL ENLACE DIRECTO A LA APLICACIÓN
 function abrirWaze(event) {
   event.preventDefault();
 
-  const destino = "Salón de Recepciones Black and White, Restrepo, Bogotá";
-  const appUrl = "waze://?q=" + encodeURIComponent(destino) + "&navigate=yes";
-  const webUrl = "https://www.waze.com/ul?q=" + encodeURIComponent(destino) + "&navigate=yes";
+  const destino = 'Salón de Recepciones Black and White, Restrepo, Bogotá';
+  const appUrl = 'waze://?q=' + encodeURIComponent(destino) + '&navigate=yes';
+  const webUrl = 'https://www.waze.com/ul?q=' + encodeURIComponent(destino) + '&navigate=yes';
 
   window.location.href = appUrl;
 
-  // Alternativa web si el teléfono no abre la aplicación.
-  window.setTimeout(() => {
-    if (document.visibilityState === "visible") {
+  setTimeout(() => {
+    if (document.visibilityState === 'visible') {
       window.location.href = webUrl;
     }
   }, 1200);
 }
 
-// MÚSICA
+// REPRODUCTOR DE MÚSICA CORREGIDO
 const audio = document.getElementById('bgMusic');
-let isPlaying = false;
+const musicStatus = document.getElementById('musicStatus');
+const musicIcon = document.getElementById('musicIcon');
 
-function updateMusicIcon() {
-  const icon = document.getElementById('musicIcon');
-  const status = document.getElementById('musicStatus');
-
-  if (!icon) return;
-
-  if (isPlaying) {
-    icon.classList.add('fa-spin');
-    icon.style.opacity = '1';
-    if (status) status.textContent = 'Reproduciendo';
-  } else {
-    icon.classList.remove('fa-spin');
-    icon.style.opacity = '.7';
-    if (status) status.textContent = 'Reproducir música';
-  }
+function updateMusicUI() {
+  const isPlaying = !audio.paused && !audio.ended;
+  if (musicIcon) musicIcon.classList.toggle('fa-spin', isPlaying);
+  if (musicStatus) musicStatus.textContent = isPlaying ? 'Reproduciendo canción' : 'Toca para reproducir';
 }
 
 function openInvitation() {
   const overlay = document.getElementById('envelope-overlay');
   const main = document.getElementById('main-content');
 
-  audio.volume = 0.5;
-
+  // Forzar la carga y reproducción segura al hacer clic en el botón principal
+  audio.volume = 0.8;
+  audio.load();
   audio.play().then(() => {
-    isPlaying = true;
-    updateMusicIcon();
-  }).catch(() => {
-    const status = document.getElementById('musicStatus');
-    if (status) status.textContent = 'Toca para reproducir';
+    updateMusicUI();
+  }).catch((error) => {
+    console.error('No se pudo reproducir el MP3 automáticamente:', error);
+    if (musicStatus) musicStatus.textContent = 'Toca aquí para reproducir';
   });
 
   overlay.style.opacity = '0';
@@ -555,131 +508,104 @@ function openInvitation() {
 
 function toggleMusic() {
   if (audio.paused) {
-    audio.volume = 0.5;
-
-    audio.play().then(() => {
-      isPlaying = true;
-      updateMusicIcon();
-    }).catch(() => {
-      const status = document.getElementById('musicStatus');
-      if (status) status.textContent = 'No se pudo reproducir';
+    audio.volume = 0.8;
+    audio.play().then(updateMusicUI).catch((error) => {
+      console.error('Error de reproducción:', error);
+      if (musicStatus) musicStatus.textContent = 'No se pudo cargar la canción';
     });
   } else {
     audio.pause();
-    isPlaying = false;
-    updateMusicIcon();
+    updateMusicUI();
   }
 }
 
-audio.addEventListener('play', () => {
-  isPlaying = true;
-  updateMusicIcon();
-});
-
-audio.addEventListener('pause', () => {
-  isPlaying = false;
-  updateMusicIcon();
-});
-
-audio.addEventListener('ended', () => {
-  isPlaying = false;
-  updateMusicIcon();
-});
-
+audio.addEventListener('play', updateMusicUI);
+audio.addEventListener('pause', updateMusicUI);
+audio.addEventListener('ended', updateMusicUI);
 audio.addEventListener('error', () => {
-  const status = document.getElementById('musicStatus');
-  if (status) status.textContent = 'No se encontró la canción';
+  if (musicStatus) musicStatus.textContent = 'No se encontró el archivo MP3';
+  console.error('No se pudo cargar ./te_pedi_carlos_rivera.mp3');
 });
 
 // CUENTA REGRESIVA
-const targetDate = new Date('December 19, 2026 19:00:00').getTime();
+const targetDate = new Date('2026-12-19T19:00:00-05:00').getTime();
 
 function updateCountdown() {
-  const d = targetDate - new Date().getTime();
+  const remaining = targetDate - Date.now();
 
-  if (d > 0) {
-    document.getElementById('days').innerText =
-      String(Math.floor(d / 86400000)).padStart(2, '0');
+  const days = document.getElementById('days');
+  const hours = document.getElementById('hours');
+  const minutes = document.getElementById('minutes');
+  const seconds = document.getElementById('seconds');
 
-    document.getElementById('hours').innerText =
-      String(Math.floor((d % 86400000) / 3600000)).padStart(2, '0');
-
-    document.getElementById('minutes').innerText =
-      String(Math.floor((d % 3600000) / 60000)).padStart(2, '0');
-
-    document.getElementById('seconds').innerText =
-      String(Math.floor((d % 60000) / 1000)).padStart(2, '0');
+  if (remaining <= 0) {
+    days.textContent = '00';
+    hours.textContent = '00';
+    minutes.textContent = '00';
+    seconds.textContent = '00';
+    return;
   }
+
+  days.textContent = String(Math.floor(remaining / 86400000)).padStart(2, '0');
+  hours.textContent = String(Math.floor((remaining % 86400000) / 3600000)).padStart(2, '0');
+  minutes.textContent = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, '0');
+  seconds.textContent = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
 }
-
-setInterval(updateCountdown, 1000);
 updateCountdown();
+setInterval(updateCountdown, 1000);
 
-// CAMPOS PARA ACOMPAÑANTES
+// CAMPOS DE ACOMPAÑANTES
 function generateAssistantFields() {
-  const count = parseInt(document.getElementById('assistantCount').value);
+  const count = parseInt(document.getElementById('assistantCount').value, 10);
   const container = document.getElementById('assistantsContainer');
-
   container.innerHTML = '';
 
   if (count > 1) {
-    const title = document.createElement('label');
-    title.className = 'block font-cinzel text-xs font-semibold text-purple-300 mb-1';
-    title.innerText = `Nombres de los otros ${count - 1} acompañantes de tu grupo:`;
-    container.appendChild(title);
+    const label = document.createElement('label');
+    label.className = 'block font-cinzel text-xs font-semibold text-purple-300 mb-1';
+    label.textContent = `Nombres de los otros ${count - 1} acompañantes:`;
+    container.appendChild(label);
 
     for (let i = 2; i <= count; i++) {
       const input = document.createElement('input');
       input.type = 'text';
       input.required = true;
+      input.id = `assistant_${i}`;
       input.placeholder = `Acompañante #${i} (Nombre y Apellido)`;
       input.className = 'w-full bg-purple-950/80 border border-tangledGold/40 rounded-xl px-4 py-2.5 text-white placeholder-purple-400/50 focus:outline-none focus:border-tangledGold transition text-sm';
-      input.id = `assistant_${i}`;
       container.appendChild(input);
     }
   }
 }
 
 // CONFIRMACIÓN POR WHATSAPP
-function sendWhatsAppRSVP(e) {
-  e.preventDefault();
+function sendWhatsAppRSVP(event) {
+  event.preventDefault();
 
   const name = document.getElementById('guestName').value.trim();
-  const count = document.getElementById('assistantCount').value;
+  const count = parseInt(document.getElementById('assistantCount').value, 10);
   const status = document.getElementById('attendanceStatus').value;
   const message = document.getElementById('guestMessage').value.trim();
-  const names = [];
+  const companions = [];
 
-  for (let i = 2; i <= parseInt(count, 10); i++) {
+  for (let i = 2; i <= count; i++) {
     const field = document.getElementById(`assistant_${i}`);
-    if (field && field.value.trim()) {
-      names.push(field.value.trim());
-    }
+    if (field && field.value.trim()) companions.push(field.value.trim());
   }
 
   const lines = [
-    '✨ CONFIRMACIÓN XV AÑOS MICHELL ✨',
+    '✨ CONFIRMACIÓN XV AÑOS DE MICHELL ✨',
     '',
     `Invitado principal: ${name}`,
     `Número de asistentes: ${count}`
   ];
 
-  if (names.length) {
-    lines.push(`Acompañantes: ${names.join(', ')}`);
-  }
-
+  if (companions.length) lines.push(`Acompañantes: ${companions.join(', ')}`);
   lines.push(`Estado: ${status}`);
-
-  if (message) {
-    lines.push(`Mensaje: ${message}`);
-  }
+  if (message) lines.push(`Mensaje: ${message}`);
 
   const url = 'https://wa.me/573106327010?text=' + encodeURIComponent(lines.join('\n'));
-  const win = window.open(url, '_blank', 'noopener,noreferrer');
-
-  if (!win) {
-    window.location.href = url;
-  }
+  window.open(url, '_blank');
 }
 </script>
 
